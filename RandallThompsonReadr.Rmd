@@ -1,0 +1,43 @@
+---
+title: "Tidyverse"
+author: "Randall Thompson"
+date: "12/1/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Importing CSV files with readr
+
+Using the nba dataset from fivethirtyeight we're going to take a look at how importing csv files in the readr package differs from the base r importing fuctions.
+
+First we will import using the base r function read.csv followed by the readr function read_csv
+
+```{r}
+library(readr)
+basernba<-read.csv('https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-draymond/draymond.csv')
+```
+
+```{r}
+readrnba<-read_csv('https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-draymond/draymond.csv')
+```
+The first difference we notice is that read_csv states how each column was parsed.
+
+Let's see what other differences we can find using a function from the dplyr package called glimpse. glimpse() shows you each column, the data type, and shows you as much data as it can within your console. 
+
+```{r message=FALSE}
+library(dplyr)
+glimpse(basernba)
+```
+
+```{r}
+glimpse(readrnba)
+```
+
+The default assignment for strings in read.csv are factors while the default assignment for strings in read_csv are characters. This is an important difference to know for text analysis. 
+
+Another difference is that read.csv parses numbers with no decimals as integers while read_csv parses all numbers as doubles for added precision. 
+
+There are many other notable differences between these two functions so hopefully I made this super easy for someone's part 2. 
