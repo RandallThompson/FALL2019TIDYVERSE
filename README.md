@@ -115,3 +115,9 @@ Author: Zach Alexander
 
 * Part 2: I extended Euclid Zhang's example, adding to his great plots by creating a ggplot2 plot of my own, as well as utilizing some tidyr and dplyr functions to manipulate the weather data he provided.
   * You can find this here: http://rpubs.com/zachalexander/tidyext
+
+
+### Readr with NBA dataset
+Author: Randall Thompson
+
+I am using the NBA dataset from FiveThirtyEight to demostrate the read_csv function from the readr package compared to the base r function read.csv. Dataset can be found here: https://github.com/fivethirtyeight/data/tree/master/nba-draymond
