@@ -86,4 +86,11 @@ merged <- select(merged, -league.y, - off, -def)
 head(merged)
 ```
 
+## tidyr - spread()             Part 2 by Randall Thompson
+The spread function takes a key value pair and spreads it across multiple columns. In this case, each date is a key and each match is a value. The resulting table will show which matches are being played on which dates. 
+
+```{r}
+merged1 <- spread(merged, date, match)
+print(merged1)
+```
 
